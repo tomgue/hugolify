@@ -24,7 +24,7 @@ admin:
   netlify:
     identity: false
 
-  display_url: /
+  display_url: //expert-space-spork-q4q6777r9vcxqq6-1313.app.github.dev/
 
   i18n:
     default_locale: fr
