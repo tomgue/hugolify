@@ -16,7 +16,7 @@ hero:
   ui:
     align: center
     vertical_align: ''
-    darken: false
+    darken: true
     theme: accent
 blocks:
   - type: paragraph
@@ -28,9 +28,8 @@ blocks:
       align: start
     surtitle: ''
     title: Title
-    text: >-
+    text: |-
       Quisque sodales nibh nibh, quis feugiat sem sagittis nec. Pellentesque placerat dolor nec blandit molestie. Quisque vulputate, purus porttitor viverra aliquet, justo lacus faucibus magna, quis hendrerit enim turpis vel sapien. Donec eget mi eget risus vehicula venenatis. Praesent dignissim ullamcorper metus eu lobortis. Integer enim ante, finibus in neque in, pharetra sagittis metus. Proin purus lacus, placerat sit amet condimentum a, ullamcorper sed magna.
-
 
       Etiam venenatis arcu ac sagittis efficitur. Morbi aliquet tortor finibus tristique pretium. Donec dolor dolor, volutpat consequat egestas nec, ullamcorper vel nunc. Praesent congue efficitur urna. Quisque ultricies dui urna, sed sollicitudin risus lobortis ac. In non dui in lacus porta tristique. Praesent id ullamcorper est. Nulla facilisi. Nam pretium dui at rhoncus faucibus. Nullam eget rutrum odio.
   - type: faq
