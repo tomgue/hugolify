@@ -1,0 +1,9 @@
+links:
+  - title: Nav secondaire
+    url: https://korben.info
+    blank: false
+    is_highlighted: false
+    links:
+      - title: Exemple
+        url: https://www.google.com
+        blank: false
