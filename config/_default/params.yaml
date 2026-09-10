@@ -24,6 +24,8 @@ admin:
   netlify:
     identity: false
 
+  display_url: /
+
   i18n:
     default_locale: fr
     # locales: "[fr,en]"
