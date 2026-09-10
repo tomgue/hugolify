@@ -1,0 +1,38 @@
+# https://github.com/browserslist/browserslist#readme
+#
+# CAUTION — queries are combined with OR: version lines ADD browsers, they
+# never cap anything. The `not` lines below are what actually enforce the
+# floor; without them, `>= 0.5%` and `last 2 major versions` pull Chrome 109,
+# Safari 15.6, Firefox 121 and Samsung 23 back in.
+#
+# Floor required by the CSS we actually ship — the PostCSS pipeline only runs
+# autoprefixer + postcss-custom-media, so nothing is transpiled:
+#   CSS Nesting                → Safari 16.5+ / Chrome 112+ / Firefox 117+
+#   Relative color oklch(from) → Safari 16.4+ / Chrome 119+ / Firefox 128+ / Samsung 25+
+#   Media range (width >= )    → Safari 16.4+
+#
+# Coverage: 90.04%
+
+>= 0.5%
+last 2 major versions
+not dead
+
+Chrome >= 120
+Firefox >= 128
+iOS >= 16.5
+Safari >= 16.5
+Samsung >= 25
+
+# Effective floor — counters the OR semantics of the queries above
+not chrome <= 119
+not safari <= 16.4
+not ios_saf <= 16.4
+not firefox <= 127
+not samsung <= 24
+
+# Legacy / proxy browsers: no CSS variables, no clamp(), no @layer
+not Explorer <= 11
+not op_mini all
+not and_uc <= 15.5
+not and_qq <= 14.9
+not kaios <= 3.1 # fix floating label issues in Firefox (see https://github.com/postcss/autoprefixer/issues/1533)

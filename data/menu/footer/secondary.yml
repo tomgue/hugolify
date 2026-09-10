@@ -1,0 +1,7 @@
+fr:
+  title: Navigation
+  links:
+    - title: Actualités
+      url: /actualites/
+    - title: Contact
+      url: /contact/

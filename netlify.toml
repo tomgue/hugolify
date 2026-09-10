@@ -1,0 +1,17 @@
+[build]
+  command = "yarn build"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.165.0"
+  GO_VERSION = "1.24.2"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
+
+[context.branch-deploy.environment]
+  HUGO_ENV = "production"
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"

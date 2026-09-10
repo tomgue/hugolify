@@ -1,0 +1,52 @@
+_merge: deep
+
+header:
+  layout: dialog
+
+# Image
+hero:
+  cover:
+    desktop: 1600x1000
+products:
+  thumbnail:
+    desktop: 370x320
+    mobile: 314x270
+blocks:
+  gallery:
+    image:
+      ratio: 1.5
+
+# Admin
+admin:
+  cms: sveltiacms
+  name: github
+  repo: tomgue/hugolify
+  netlify:
+    identity: false
+
+  i18n:
+    default_locale: fr
+    # locales: "[fr,en]"
+
+  collections:
+    indexes:
+      enable: false
+    pages:
+      nested:
+        depth: 1
+
+  blocks:
+    enable:
+      - cta
+      - datas
+      - editorial
+      - faq
+      - figure
+      - images
+      - informations
+      - paragraph
+      - pushes
+      - selected
+      - testimonials
+      - title
+      - video

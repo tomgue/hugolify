@@ -1,0 +1,15 @@
+imports:
+ 
+  # Modules
+  - path: github.com/hugolify/hugolify-theme-posts-authors/v2
+  - path: github.com/hugolify/hugolify-theme-posts-categories/v2
+  - path: github.com/hugolify/hugolify-theme-posts/v2
+  - path: github.com/hugolify/hugolify-theme-persons/v2
+
+  # Core theme
+  - path: github.com/hugolify/hugolify-theme/v2 # HTML and Go Template
+  - path: github.com/hugolify/hugolify-theme-icons # Lucide and Simple Icons
+  - path: github.com/hugolify/hugolify-theme-design-system # CSS and JS
+
+  # CMS
+  - path: github.com/hugolify/hugolify-admin/v2

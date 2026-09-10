@@ -1,0 +1,19 @@
+{
+  "sum": "4db95e8df2ad5a43",
+  "dependencySources": {
+    "dependencies": {},
+    "devDependencies": {
+      "@hugolify/prettier-config": "github.com/hugolify/hugolify-theme-posts-authors/v2",
+      "@uncinq/component-tokens": "github.com/hugolify/hugolify-theme-posts/v2",
+      "@uncinq/css-base": "github.com/hugolify/hugolify-theme-design-system",
+      "@uncinq/css-components": "github.com/hugolify/hugolify-theme-design-system",
+      "@uncinq/design-tokens": "github.com/hugolify/hugolify-theme-posts/v2",
+      "autoprefixer": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss-cli": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss-custom-media": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss-import": "github.com/hugolify/hugolify-theme-design-system",
+      "style-dictionary": "github.com/hugolify/hugolify-theme-posts/v2"
+    }
+  }
+}
