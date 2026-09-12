@@ -6,7 +6,7 @@ require (
 	github.com/Splidejs/splide v4.1.3+incompatible // indirect
 	github.com/dixonandmoe/rellax v0.0.0-20240824005335-9ed6cb0aae03 // indirect
 	github.com/hugolify/hugolify-admin/v2 v2.0.0-14 // indirect
-	github.com/hugolify/hugolify-theme-design-system v0.0.0-20260912151934-19e691e19ec8 // indirect
+	github.com/hugolify/hugolify-theme-design-system v0.0.0-20260912165152-6eac6c0951ce // indirect
 	github.com/hugolify/hugolify-theme-docs/v2 v2.0.0-20260908101900-d1c813828f6e // indirect
 	github.com/hugolify/hugolify-theme-icons v0.0.0-20260903194220-889a383d226d // indirect
 	github.com/hugolify/hugolify-theme-persons/v2 v2.5.0 // indirect

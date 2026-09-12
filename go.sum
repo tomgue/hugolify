@@ -4,8 +4,8 @@ github.com/dixonandmoe/rellax v0.0.0-20240824005335-9ed6cb0aae03 h1:TyZM0MK9+09/
 github.com/dixonandmoe/rellax v0.0.0-20240824005335-9ed6cb0aae03/go.mod h1:CJ8UtS8LPLOSmpvwRkQJkwqOwwXaDfH5S7iG83GKAlY=
 github.com/hugolify/hugolify-admin/v2 v2.0.0-14 h1:z/RZAM2097fUAXlgEmFT/DkQmRS56t14QWd2b/PGJw0=
 github.com/hugolify/hugolify-admin/v2 v2.0.0-14/go.mod h1:lPDkZn5SuJ2zB96xU/kKH3gNWOovqgxutjgnBOin48M=
-github.com/hugolify/hugolify-theme-design-system v0.0.0-20260912151934-19e691e19ec8 h1:k2T3md4oewfuWnYX/oUpH2+cEWWhfMkJ7TBTe60txt4=
-github.com/hugolify/hugolify-theme-design-system v0.0.0-20260912151934-19e691e19ec8/go.mod h1:pmx1M5Ej9OhNx59jVsqRWhWHSv0JVx6U9txsqTWauTQ=
+github.com/hugolify/hugolify-theme-design-system v0.0.0-20260912165152-6eac6c0951ce h1:61uasIGTCoOvoVVUQzN31Wcz24ZW2hv7D3wS5K52eCo=
+github.com/hugolify/hugolify-theme-design-system v0.0.0-20260912165152-6eac6c0951ce/go.mod h1:pmx1M5Ej9OhNx59jVsqRWhWHSv0JVx6U9txsqTWauTQ=
 github.com/hugolify/hugolify-theme-docs/v2 v2.0.0-20260908101900-d1c813828f6e h1:a5Uj2FFQ/FB1Nr9shxnatdJmdUzoCcREMXLUulf+IJM=
 github.com/hugolify/hugolify-theme-docs/v2 v2.0.0-20260908101900-d1c813828f6e/go.mod h1:L+idmDTe/Y+zi2lxe7BakjDgywPvNJ5NISKvEb/DwrU=
 github.com/hugolify/hugolify-theme-icons v0.0.0-20260903194220-889a383d226d h1:VJA+JEVazGteQx4sxhvKMmMr2V1HI0UaTLrZT4w+hTA=

@@ -50,10 +50,10 @@
     "cms:decapcms": "npx decap-server",
     "cms:netlifycms": "npx netlify-cms-proxy-server",
     "install:hugolify": "hugo mod get && hugo mod npm pack",
-    "install:update": "hugo mod get -u && hugo mod npm pack && yarn install",
+    "install:update": "hugo mod get -u && hugo mod npm pack && yarn update:all",
     "tidy": "hugo mod tidy",
     "update": "hugo mod get -u",
-    "update:all": "yarn update && yarn tidy && yarn upgrade",
+    "update:all": "yarn update && yarn tidy && yarn up",
     "watch": "hugo server"
   },
   "version": "1.16.0",
