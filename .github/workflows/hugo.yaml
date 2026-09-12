@@ -1,7 +1,7 @@
 name: Deploy Hugolify
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -61,6 +61,8 @@ jobs:
           corepack enable
           YARN_VERSION=$(node -e "console.log(require('./package.json').packageManager.replace('yarn@', ''))")
           corepack prepare yarn@${YARN_VERSION} --activate
+          # Force Corepack's Yarn to be first in PATH
+          echo "$(dirname $(which yarn))" >> $GITHUB_PATH
           yarn --version | grep -q "${YARN_VERSION}" || exit 1
 
       - name: Install Dart Sass
@@ -76,29 +78,13 @@ jobs:
           tar -C "${HOME}/.local/hugo" -xf "${{ runner.temp }}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
           echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
 
-      - name: Log tool versions
-        run: |
-          echo "Node.js: $(node --version)"
-          echo "Yarn: $(yarn --version)"
-          echo "Hugo: $(hugo version)"
-          echo "Dart Sass: $(sass --version)"
-
-      - name: Configure Git
-        run: git config --global core.quotepath false
-
-      - name: Fetch full Git history
-        run: git fetch --unshallow || true
-
-      - name: Initialize Git submodules
-        run: git submodule update --init --recursive || true
-
       - name: Install dependencies
         run: |
           if [[ ! -f .yarnrc.yml ]]; then
             echo "::error::Missing .yarnrc.yml"
             exit 1
           fi
-          yarn install --immutable
+          corepack run yarn install --immutable
 
       - name: Cache Hugo
         uses: actions/cache@v6
@@ -108,8 +94,7 @@ jobs:
           restore-keys: hugo-
 
       - name: Build
-        run: |
-          hugo build --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo build --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
