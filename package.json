@@ -1,16 +1,43 @@
 {
+  "private": true,
   "author": {
-    "email": "sebousan@gmail.com",
-    "name": "Sébastien Moulène",
-    "url": "https://www.sebastienmoulene.com/"
+    "email": "thomas@gmail.com",
+    "name": "Thomas",
+    "url": "https://tomgue.github.io/"
   },
   "bugs": {
-    "url": "https://github.com/sebousan/hugolify-sveltia-test/issues"
+    "url": "https://github.com/tomgue/tomgue.github.io/issues"
   },
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@uncinq/component-tokens": "github.com/hugolify/hugolify-theme-design-system",
+      "@uncinq/css-base": "github.com/hugolify/hugolify-theme-design-system",
+      "@uncinq/css-components": "github.com/hugolify/hugolify-theme-design-system",
+      "@uncinq/design-tokens": "github.com/hugolify/hugolify-theme-design-system",
+      "autoprefixer": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss-cli": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss-custom-media": "github.com/hugolify/hugolify-theme-design-system",
+      "postcss-import": "github.com/hugolify/hugolify-theme-design-system"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@uncinq/component-tokens": "^1.0.0",
+    "@uncinq/css-base": "^1.0.0",
+    "@uncinq/css-components": "^1.0.0",
+    "@uncinq/design-tokens": "^1.0.0",
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "postcss-cli": "^11",
+    "postcss-custom-media": "^10",
+    "postcss-import": "^16.0.0"
+  },
+  "homepage": "https://tomgue.github.io",
   "license": "MIT",
-  "name": "hugolify-sveltia-test",
-  "private": true,
-  "repository": "https://github.com/sebousan/hugolify-sveltia-test",
+  "name": "tomgue.github.io",
+  "repository": "https://github.com/tomgue/tomgue.github.io",
   "scripts": {
     "build": "hugo --noChmod --gc --minify",
     "build:config:cloudcannon": "node scripts/build-config-cloudcannon.js",
@@ -23,13 +50,14 @@
     "cms": "yarn cms:decapcms",
     "cms:decapcms": "npx decap-server",
     "cms:netlifycms": "npx netlify-cms-proxy-server",
-    "install:hugolify": "hugo mod get && hugo mod npm pack && yarn install",
+    "install:hugolify": "hugo mod get && hugo mod npm pack",
+    "install:update": "hugo mod get -u && hugo mod npm pack && yarn install",
     "tidy": "hugo mod tidy",
     "update": "hugo mod get -u",
     "update:all": "yarn update && yarn tidy && yarn upgrade",
     "watch": "hugo server"
   },
-  "version": "0.0.0",
+  "version": "1.16.0",
   "workspaces": [
     "packages/hugoautogen"
   ]
