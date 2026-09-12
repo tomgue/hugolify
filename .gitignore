@@ -7,3 +7,4 @@ resources
 .netlify
 jsconfig.json
 package.hugo.json
+.yarn
