@@ -47,7 +47,12 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
-          package-manager-cache: false  # ← SOLUTION
+          package-manager-cache: false
+
+      - name: Remove ALL global Yarn instances
+        run: |
+          sudo rm -f /usr/bin/yarn /usr/local/bin/yarn || true
+          ! command -v yarn || echo "Global Yarn removed"
 
       - name: Cache Corepack
         uses: actions/cache@v6
