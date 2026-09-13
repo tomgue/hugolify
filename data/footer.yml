@@ -1,0 +1,7 @@
+title: Bloc d'information en bas du site
+text: Du text
+cta:
+  text: Text du cat
+  url: https://github.com/tomgue/hugolify
+  lang: fr
+  blank: true

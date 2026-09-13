@@ -5,12 +5,12 @@ form:
 
 search:
   enable: true # Set true to enable search
-  layout: modal # Also modal or drawer
+  layout: drawer # Also raw modal or drawer
   filter: true # Set true to add filters by type
   sort: true
 
 css:
-  darkmode: true
+  darkmode: false
   preload: true
   print: true
   postcss: 'postcss/design-system'

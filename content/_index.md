@@ -1,14 +1,26 @@
 ---
-isIndex: true
+isPage: true
 draft: false
 title: Home
-
+description: ''
+image: null
+hero: null
 blocks:
-  - type: editorial
+  - type: latest
+    heading:
+      surtitle: Sous titre
+      title: Titre
+      text: Texte de la section
     ui:
-      theme: accent
-      grid: medium # block-medium + col-medium on the row child
-      offset: center # block-center + offset-center
-      align: center # block-align-center
-      layout: carousel # block-carousel
+      theme: dark
+      grid: medium
+      offset: center
+      align: end
+      scrollsnap: sm
+      layout: grid
+    count: 4
+    section: posts
+    show_more: true
+slug: ''
+isIndex: true
 ---
