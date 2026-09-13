@@ -23,6 +23,7 @@
     }
   },
   "devDependencies": {
+    "@hugolify/prettier-config": "^0.3.1",
     "@uncinq/component-tokens": "^1.0.0",
     "@uncinq/css-base": "^1.0.0",
     "@uncinq/css-components": "^1.0.0",
@@ -56,7 +57,7 @@
     "update:all": "yarn update && yarn tidy && yarn up",
     "watch": "hugo server"
   },
-  "version": "1.16.0",
+  "version": "1.0.0",
   "workspaces": [
     "packages/hugoautogen"
   ],
