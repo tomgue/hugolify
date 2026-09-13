@@ -53,7 +53,7 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ~/.cache/corepack
-          key: corepack-${{ hashFiles('package.json') }}
+          key: corepack-${{ env.NODE_VERSION }}-${{ hashFiles('package.json') }}
           restore-keys: corepack-
 
       - name: Enable Corepack
@@ -61,9 +61,8 @@ jobs:
           corepack enable
           YARN_VERSION=$(node -e "console.log(require('./package.json').packageManager.replace('yarn@', ''))")
           corepack prepare yarn@${YARN_VERSION} --activate
-          # Force Corepack's Yarn to be first in PATH
-          echo "$(dirname $(which yarn))" >> $GITHUB_PATH
-          yarn --version | grep -q "${YARN_VERSION}" || exit 1
+          # Verify Corepack Yarn version (using corepack run to bypass global yarn)
+          corepack run yarn --version | grep -q "${YARN_VERSION}" || exit 1
 
       - name: Install Dart Sass
         run: |
