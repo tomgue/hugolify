@@ -47,26 +47,7 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
-          package-manager-cache: false
-
-      - name: Remove ALL global Yarn instances
-        run: |
-          sudo rm -f /usr/bin/yarn /usr/local/bin/yarn || true
-          ! command -v yarn || echo "Global Yarn removed"
-
-      - name: Cache Corepack
-        uses: actions/cache@v6
-        with:
-          path: ~/.cache/corepack
-          key: corepack-${{ env.NODE_VERSION }}-${{ hashFiles('package.json') }}
-          restore-keys: corepack-
-
-      - name: Enable Corepack
-        run: |
-          corepack enable
-          YARN_VERSION=$(node -e "console.log(require('./package.json').packageManager.replace('yarn@', ''))")
-          corepack prepare yarn@${YARN_VERSION} --activate
-          corepack run yarn --version | grep -q "${YARN_VERSION}" || exit 1
+          cache: 'yarn' # ← Cache Yarn 1.x
 
       - name: Install Dart Sass
         run: |
@@ -82,12 +63,7 @@ jobs:
           echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
 
       - name: Install dependencies
-        run: |
-          if [[ ! -f .yarnrc.yml ]]; then
-            echo "::error::Missing .yarnrc.yml"
-            exit 1
-          fi
-          corepack run yarn install --immutable
+        run: yarn install --frozen-lockfile # ← Yarn 1.x classique
 
       - name: Cache Hugo
         uses: actions/cache@v6

@@ -1,9 +1,8 @@
 {
-  "sum": "4a3948c55f19f367",
+  "sum": "e362de37c9e82043",
   "dependencySources": {
     "dependencies": {},
     "devDependencies": {
-      "@hugolify/prettier-config": "github.com/hugolify/hugolify-theme-docs/v2",
       "style-dictionary": "github.com/hugolify/hugolify-theme-docs/v2"
     }
   }

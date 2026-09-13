@@ -54,12 +54,11 @@
     "install:update": "hugo mod get -u && hugo mod npm pack && yarn update:all",
     "tidy": "hugo mod tidy",
     "update": "hugo mod get -u",
-    "update:all": "yarn update && yarn tidy && yarn up",
+    "update:all": "yarn update && yarn tidy && yarn upgrade",
     "watch": "hugo server"
   },
   "version": "1.0.0",
   "workspaces": [
     "packages/hugoautogen"
-  ],
-  "packageManager": "yarn@4.18.0"
+  ]
 }
