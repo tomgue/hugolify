@@ -47,7 +47,14 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'yarn' # ← Cache Yarn 1.x
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+
+      - name: Log Node.js and Yarn versions
+        run: |
+          node --version
+          npm --version
+          yarn --version
 
       - name: Install Dart Sass
         run: |
