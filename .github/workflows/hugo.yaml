@@ -19,7 +19,7 @@ jobs:
     env:
       GO_VERSION: 1.27.0
       HUGO_VERSION: 0.166.0
-      NODE_VERSION: 24.20.0
+      NODE_VERSION: 24.21.0
       DART_SASS_VERSION: 1.77.8
       TZ: Europe/Paris
     steps:
@@ -48,6 +48,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: Remove global Yarn (fix Corepack conflict) # ← NOUVELLE ÉTAPE
+        run: |
+          if [ -f /usr/local/bin/yarn ]; then
+            mv /usr/local/bin/yarn /usr/local/bin/yarn-disabled
+          fi
+
       - name: Cache Corepack
         uses: actions/cache@v6
         with:
@@ -60,7 +66,6 @@ jobs:
           corepack enable
           YARN_VERSION=$(node -e "console.log(require('./package.json').packageManager.replace('yarn@', ''))")
           corepack prepare yarn@${YARN_VERSION} --activate
-          # Verify Corepack Yarn version (using corepack run to bypass global yarn)
           corepack run yarn --version | grep -q "${YARN_VERSION}" || exit 1
 
       - name: Install Dart Sass
