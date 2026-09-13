@@ -47,12 +47,7 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Remove global Yarn (fix Corepack conflict) # ← NOUVELLE ÉTAPE
-        run: |
-          if [ -f /usr/local/bin/yarn ]; then
-            mv /usr/local/bin/yarn /usr/local/bin/yarn-disabled
-          fi
+          package-manager-cache: false  # ← SOLUTION
 
       - name: Cache Corepack
         uses: actions/cache@v6
