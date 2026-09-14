@@ -1,8 +1,8 @@
 ---
 isPage: true
 draft: false
-title: Home
-description: ''
+title: Tomlab
+description: Un petit blog note personnel sur lequel je partage des geekeries, en d'autres termes mon "digital garden"
 image: null
 hero: null
 blocks:

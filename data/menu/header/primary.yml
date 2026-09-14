@@ -3,4 +3,7 @@ links:
     url: /docs/
     blank: false
     is_highlighted: false
-    links: []
+  - title: Blog
+    url: /posts/
+    blank: false
+    is_highlighted: false
