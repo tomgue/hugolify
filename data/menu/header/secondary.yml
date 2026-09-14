@@ -1,0 +1,6 @@
+links:
+  - title: Blog
+    url: /posts/
+    blank: false
+    is_highlighted: false
+    links: []
