@@ -5,8 +5,8 @@ form:
 
 search:
   enable: true # Set true to enable search
-  layout: drawer # Also raw modal or drawer
-  filter: true # Set true to add filters by type
+  layout: modal # Also raw modal or drawer
+  filter: false # Set true to add filters by type
   sort: true
 
 css:
