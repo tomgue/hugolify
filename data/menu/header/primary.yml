@@ -2,4 +2,5 @@ links:
   - title: Docs
     url: /docs/
     blank: false
-    is_highlighted: true
+    is_highlighted: false
+    links: []
