@@ -21,6 +21,7 @@ admin:
   name: github
   repo: tomgue/hugolify
   preview: true
+  publish_mode: editorial_workflow
   netlify:
     identity: false
   collections:
