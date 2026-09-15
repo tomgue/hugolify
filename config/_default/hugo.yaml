@@ -1,5 +1,6 @@
 ## LANGUAGE
 defaultContentLanguage: fr
+baseURL: https://tomgue.github.io/hugolify/
 
 ## ADVANCED
 build:
