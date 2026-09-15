@@ -33,6 +33,17 @@ blocks:
         full: false
         placeholder: Votre nom
         autocomplete: ''
+      - value: ''
+        name: message
+        label: Message
+        type: textarea
+        items: []
+        accept: ''
+        pattern: ''
+        required: true
+        full: false
+        placeholder: Votre message
+        autocomplete: ''
     name: contact
     submit: Envoyer
 slug: ''
