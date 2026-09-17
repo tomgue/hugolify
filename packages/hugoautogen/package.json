@@ -3,7 +3,6 @@
   "devDependencies": {
     "style-dictionary": "^5.0.0"
   },
-  "name": "hugoautogen",
-  "private": true,
+  "name": "hugolify",
   "version": "0.1.0"
 }
