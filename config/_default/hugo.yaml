@@ -1,6 +1,5 @@
 ## LANGUAGE
-defaultContentLanguage: fr
-baseURL: https://tomgue.github.io/hugolify/
+defaultContentLanguage: en
 
 ## ADVANCED
 build:
@@ -10,9 +9,12 @@ build:
     disableTags: false
     enable: true
 enableRobotsTXT: true
+imaging:
+  quality: 75
 markup:
   tableOfContents:
     ordered: true
 pagination:
   pagerSize: 9
 removePathAccents: true
+timeout: 100000
