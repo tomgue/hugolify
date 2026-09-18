@@ -1,15 +1,39 @@
-/**
- * PostCSS config — fallback (project root)
- *
- * This config is used when no specific PostCSS config directory is set via
- * params.css.postcss in your styling module's hugo.yaml.
- *
- * Each styling module ships its own config in a dedicated directory:
- *   postcss/design-system/postcss.config.js  → hugolify-theme-design-system
- *   postcss/bootstrap/postcss.config.js      → hugolify-theme-bootstrap
- */
+/* eslint-disable no-undef */
 module.exports = {
-  plugins: [
-    require('autoprefixer')
-  ]
-};
+    plugins: {
+      autoprefixer: {},
+      cssnano: {
+        preset: 'default'
+      },
+      '@fullhuman/postcss-purgecss': {
+        mode: 'all',
+        content: ['./hugo_stats.json'],
+        dynamicAttributes: [
+          'aria-current',
+          'aria-hidden',
+          'aria-expanded',
+          'href',
+          'role',
+          'type'
+        ],
+        safelist: {
+          standard: [
+            'show',
+            'showing',
+            'hide',
+            'fade',
+            /-backdrop$/,
+            /^is-/,
+            /^splide_/
+          ],
+          deep: [/^tobii/]
+        },
+        defaultExtractor: (content) => {
+          let els = JSON.parse(content).htmlElements;
+          els = els.tags.concat(els.classes);
+          return els;
+        }
+      }
+    }
+  };
+  

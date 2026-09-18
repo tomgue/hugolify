@@ -3,17 +3,6 @@ node_modules
 public
 resources
 .DS_store
-
 # Local Netlify folder
 .netlify
 jsconfig.json
-package.hugo.json
-
-# yarn
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions

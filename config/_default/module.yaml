@@ -1,5 +1,8 @@
 imports:
-  # Modules
+  # Content
+  # -> Hugolify content types and taxonomies available https://www.hugolify.io/docs/sections/
+
+# Content
   - path: github.com/hugolify/hugolify-theme-docs/v2
   - path: github.com/hugolify/hugolify-theme-posts-authors/v2
   - path: github.com/hugolify/hugolify-theme-posts-categories/v2
@@ -10,10 +13,11 @@ imports:
   - path: github.com/hugolify/hugolify-theme-publications-categories/v2
   - path: github.com/hugolify/hugolify-theme-publications-persons/v2
 
-  # Core theme
+# Core theme
   - path: github.com/hugolify/hugolify-theme/v2
-  - path: github.com/hugolify/hugolify-theme-design-system # CSS and JS
-  - path: github.com/hugolify/hugolify-theme-icons
 
-  # CMS
+# Styling layer
+  - path: github.com/hugolify/hugolify-theme-bootstrap
+
+# CMS
   - path: github.com/hugolify/hugolify-admin/v2
