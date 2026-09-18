@@ -33,3 +33,5 @@ blocks:
 slug: ''
 isIndex: true
 ---
+
+Corps du texte
