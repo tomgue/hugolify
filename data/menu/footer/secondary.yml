@@ -1,0 +1,7 @@
+title: Nav Secondaire
+links:
+  - title: Admin
+    url: /admin/
+    blank: true
+    is_highlighted: false
+    links: []

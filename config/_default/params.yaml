@@ -1,4 +1,29 @@
 _merge: deep
-params:
-  css:
-    postcss: "postcss/bootstrap"
+form:
+  netlify: false # Set false to disable Netlify forms
+  action: false # Replace by URL from formspree, fabform, kwes…
+
+search:
+  enable: true # Set true to enable search
+  layout: modal # Also raw modal or drawer
+  filter: false # Set true to add filters by type
+  sort: true
+
+css:
+  darkmode: false
+  preload: true
+  print: true
+  postcss: 'postcss/design-system'
+
+# Admin
+admin:
+  cms: sveltiacms
+  name: github
+  repo: tomgue/hugolify
+  preview: true
+  publish_mode: editorial_workflow
+  netlify:
+    identity: false
+  collections:
+    indexes:
+      enable: false

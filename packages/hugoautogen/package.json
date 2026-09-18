@@ -1,9 +1,6 @@
 {
   "dependencies": {},
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5",
-    "@uncinq/component-tokens": "^1.0.0",
-    "@uncinq/design-tokens": "^1.0.0",
     "style-dictionary": "^5.0.0"
   },
   "name": "hugolify",

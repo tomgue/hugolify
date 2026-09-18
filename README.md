@@ -6,42 +6,66 @@ Is a Github template for build easily a fast, accessible friendly and low carbon
 
 ## Live demos
 
-### Base
+- https://hugolify-theme-design-system--hugolify-demo.netlify.app/
 
-**Netlify**
+## Installation
 
-https://demo.hugolify.io/
+After cloning or updating Hugo modules, run:
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5a4fa061-e7a5-4e66-9612-4fae713bda09/deploy-status)](https://app.netlify.com/sites/hugolify-demo/deploys)
+```bash
+yarn install:hugolify && yarn install
+# or: npm run install:hugolify && npm install
+# or: pnpm run install:hugolify && pnpm install
+```
 
-**Cloudflare Pages**
+The `install:hugolify` script chains two steps:
 
-https://hugolify.pages.dev/
+1. `hugo mod get` — downloads Hugo modules declared in `config/_default/module.yaml`
+2. `hugo mod npm pack` — merges the `package.hugo.json` of each module into the project's `package.json`, pulling in their npm dependencies (PostCSS plugins, etc.)
 
+Then the final install step installs the resulting npm packages.
 
-### Theme 1
+> Run these commands whenever you add, remove, or update a Hugo module — the npm dependencies of each module are declared in their `package.hugo.json` and are only available after this step.
 
-https://theme-1--hugolify-demo.netlify.app/
+## Styling
 
-### Theme 2
+By default the template uses `hugolify-theme` + `hugolify-theme-bootstrap`. Both are declared as explicit imports in `config/_default/module.yaml`:
 
-https://theme-2--hugolify-demo.netlify.app/
+```yaml
+imports:
+  - path: github.com/hugolify/hugolify-theme/v2
+  - path: github.com/hugolify/hugolify-theme-bootstrap
+```
 
-### Theme 3
+To switch to a different styling module, replace the second import:
 
-https://theme-3--hugolify-demo.netlify.app/
+```yaml
+imports:
+  - path: github.com/hugolify/hugolify-theme/v2
+  - path: github.com/hugolify/hugolify-theme-design-system
+```
 
-### Theme 4
+See [hugolify-theme](https://github.com/Hugolify/hugolify-theme) for the full architecture and how to build your own module.
 
-https://theme-4--hugolify-demo.netlify.app/
+## Migration from v1
 
-### Theme 5
+In v1, Bootstrap (CSS and JS) was bundled directly inside `hugolify-theme`. In v2, `hugolify-theme` is framework-agnostic — CSS and JS live in a separate styling module (`hugolify-theme-bootstrap`) that must be declared explicitly.
 
-https://theme-5--hugolify-demo.netlify.app/
+**Update `config/_default/module.yaml`** — add the styling module explicitly:
 
-### Products
+```yaml
+imports:
+  - path: github.com/hugolify/hugolify-theme/v2  # add /v2
+  - path: github.com/hugolify/hugolify-theme-bootstrap  # add this line
+```
 
-https://demo-products--hugolify-demo.netlify.app
+**Remove `module.replacements`** from `hugo.yaml` if present.
+
+Other breaking changes from hugolify-theme v2:
+
+* JS hooks: `data-bs-toggle/target` → `class="js-*"` + `data-target`
+* Grid classes: `col-md-*` → `col-small`, `col-medium`, `col-large`, `col-xsmall`
+* Badge states: `text-bg-*` → `badge-*`
 
 ## Documentation
 

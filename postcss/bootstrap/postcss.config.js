@@ -1,15 +1,19 @@
+/* eslint-disable no-undef */
+
 /**
  * PostCSS config — hugolify-theme-bootstrap
  *
- * Copy this file to "postcss/bootstrap" directory of your Hugo project and install the dependencies:
- *   hugo mod get && hugo mod npm pack && yarn install
+ * Used by Hugo via:
+ *   css:
+ *     postcss: "postcss/bootstrap"
  *
- * Requires Hugo stats for PurgeCSS (hugo.yaml):
+ * @import resolution is handled natively by Hugo (inlineImports: true in css.html).
+ * PurgeCSS requires hugo_stats.json — add to hugo.yaml:
  *   build:
  *     writeStats: true
+ *
+ * Install: npm install -D @fullhuman/postcss-purgecss autoprefixer
  */
-
-/* eslint-disable no-undef */
 module.exports = {
   plugins: {
     autoprefixer: {},
@@ -39,15 +43,9 @@ module.exports = {
         ]
       },
       defaultExtractor: (content) => {
-        // hugo_stats.json holds null tags/classes/ids until Hugo finishes
-        // collecting stats (first build, or after a crashed build), so guard
-        // against null to avoid "Cannot read properties of null (reading 'concat')".
-        const els = JSON.parse(content).htmlElements;
-        return [
-          ...(els.tags || []),
-          ...(els.classes || []),
-          ...(els.ids || [])
-        ];
+        let els = JSON.parse(content).htmlElements;
+        els = els.tags.concat(els.classes);
+        return els;
       }
     }
   }
